@@ -7,6 +7,7 @@ const connectDb = require("./utils/db");
 const authRoute = require("./router/auth-router");
 const contactRoute = require("./router/contact-router");
 const errorMiddleware = require("./middlewares/error-middleware.js");
+const PORT = process.env.PORT|| 5000;
 
 //middleware
 //handling cors policy and hosting
@@ -36,7 +37,6 @@ app.use(errorMiddleware);
 // app.get("/about", (req, res) => {
 //   res.status(200).send("welcome user to my about");
 // });
-const PORT = 5000;
 connectDb().then(() => {
   app.listen(PORT, () => {
     console.log(`server is running at port : ${PORT}`);
