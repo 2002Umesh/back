@@ -12,10 +12,10 @@ const PORT = process.env.PORT|| 5000;
 //middleware
 //handling cors policy and hosting
 const corsOptions = {
-  origin: [
+  origin: 
  
     "https://cloneplusdisney.netlify.app/"
-  ],
+  ,
   methods: "GET,POST,PUT,DELETE,PATCH,HEAD",
   Credentials: true,
 };
