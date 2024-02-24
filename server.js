@@ -12,11 +12,10 @@ const errorMiddleware = require("./middlewares/error-middleware.js");
 //handling cors policy and hosting
 const corsOptions = {
   origin: [
-    "http://localhost:5173",
-    "https://disney-plus-clone-frontend-coral.vercel.app",
-    "https://cloneplusdisney.netlify.app/",
+ 
+    "https://cloneplusdisney.netlify.app/"
   ],
-  method: "GET,POST,PUT,DELETE,PATCH,HEAD",
+  methods: "GET,POST,PUT,DELETE,PATCH,HEAD",
   Credentials: true,
 };
 app.use(cors(corsOptions));
