@@ -6,6 +6,7 @@ const app = express();
 const connectDb = require("./utils/db");
 const authRoute = require("./router/auth-router");
 const contactRoute = require("./router/contact-router");
+const paymentRoute = require("./router/payment-router");
 const errorMiddleware = require("./middlewares/error-middleware.js");
 const PORT = process.env.PORT || 5000;
 
@@ -19,12 +20,14 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // app.use("/api/auth", authRoute);
 // app.use("/api/form", contactRoute);
 
 app.use("/api/auth", authRoute);
 app.use("/api/form", contactRoute);
+app.use("/api/payment", paymentRoute);
 
 app.use(errorMiddleware);
 
